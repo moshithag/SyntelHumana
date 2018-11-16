@@ -1,0 +1,18 @@
+global with sharing class HUMUtilityHelper
+{
+  public static List<string> doSort(Set<string> setvalues)
+  {
+    List<string> lstOptions = new List<string>();
+    lstOptions.addAll(setvalues);
+    for(integer icounter = 0; icounter < lstOptions.size(); icounter++)
+    {
+      lstOptions[icounter] = lstOptions[icounter].toUpperCase() + lstOptions[icounter];
+    }
+    lstOptions.sort();
+    for(integer icounter = 0; icounter < lstOptions.size(); icounter++)
+    {
+      lstOptions[icounter] = lstOptions[icounter].substring(lstOptions[icounter].length() / 2) ;
+    }
+    return lstOptions;
+  }
+}
