@@ -15,4 +15,8 @@ global with sharing class HUMUtilityHelper
     }
     return lstOptions;
   }
+  public static String getMD5Hash(String sInputString)
+  {
+   return EncodingUtil.convertToHex(Crypto.generateDigest('MD5', Blob.valueOf(sInputString)));
+  }
 }
